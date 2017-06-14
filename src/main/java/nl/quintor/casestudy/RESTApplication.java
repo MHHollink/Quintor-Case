@@ -14,13 +14,14 @@ import javax.ws.rs.core.Response;
 @ApplicationPath("/resources")
 public class RESTApplication extends Application{
 
-    // http://localhost:8080/Quintor-Case/resources/MyRestService/sayHello
+    // http://localhost:8080/casestudy/resources/MyRestService/sayHello
     @GET
     @Path("/sayHello")
     public String getHelloMessage() {
         return "Hello world";
     }
 
+    // http://localhost:8080/casestudy/resources/MyRestService/echo?message=Hallo%20world
     @GET
     @Path("/echo")
     public Response getResponseMessage(@QueryParam("message") String message){
