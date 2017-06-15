@@ -17,3 +17,10 @@ The case contains the following technoligies :
 * Angular2
 * HTML
 * CSS
+
+## Automated deployment
+
+* Jenkins
+* Sonar
+* Docker
+* Wildfly
