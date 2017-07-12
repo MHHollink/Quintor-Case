@@ -17,3 +17,15 @@ The case contains the following technoligies :
 * Angular2
 * HTML
 * CSS
+
+# REST
+
+Since this is a REST webservice there must be a way to communicate with it. There are multiple calls inside the REST API that can be used to get the wanted data.
+The Application contains 3 main resources. 
+
+* /artists
+* /artists/{artistId}
+* /artists/{artistId}/albums
+* /artists/{artistId}/albums/{albumId}
+* /artists/{artistId}/albums/{albumId}/songs
+* /artists/{artistId}/albums/{albumId}/songs/{songId}
