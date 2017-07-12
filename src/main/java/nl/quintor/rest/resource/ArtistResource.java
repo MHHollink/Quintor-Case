@@ -1,4 +1,4 @@
-package nl.quintor;
+package nl.quintor.rest.resource;
 
 import javax.ws.rs.GET;
 import javax.ws.rs.Path;
@@ -10,7 +10,7 @@ import javax.ws.rs.core.MediaType;
  * Root resource (exposed at "artist" path)
  */
 @Path("artist")
-public class MyResource {
+public class ArtistResource {
 
     /**
      * Method handling HTTP GET requests. The returned object will be sent
@@ -19,8 +19,8 @@ public class MyResource {
      * @return String that will be returned as a text/plain response.
      */
     @GET
-    @Produces(MediaType.TEXT_PLAIN)
     @Path("{id}")
+    @Produces(MediaType.TEXT_HTML)
     public String getIt(@PathParam("id") String id) {
         return String.format("Got %s!", id);
     }
