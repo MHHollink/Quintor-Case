@@ -1,7 +1,7 @@
 # MediaLibrary
 
 This repository contains the code base for the CD library case that is presented by Quintor BV. as an knowledge test.
-The case contains the following technoligies :
+The case contains the following technologies :
 
 ## Backend
 
@@ -10,7 +10,7 @@ The case contains the following technoligies :
 * JPA
 * JSR303
 * CDI
-* Arquilion
+* Arquillian
 
 ## Frontend 
 
