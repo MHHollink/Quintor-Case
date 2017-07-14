@@ -4,9 +4,6 @@ import org.junit.Test;
 
 import static org.junit.Assert.*;
 
-/**
- * Created by marce on 13-Jul-17.
- */
 public class ArtistServiceTest extends ArtistService {
     @Test
     public void getAllTest() throws Exception {
