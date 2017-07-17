@@ -2,9 +2,7 @@ package nl.quintor.persistance;
 
 import org.junit.Test;
 
-import static org.junit.Assert.*;
-
-public class ArtistServiceTest extends ArtistService {
+public class ArtistServiceTest {
     @Test
     public void getAllTest() throws Exception {
     }

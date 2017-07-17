@@ -2,9 +2,7 @@ package nl.quintor.rest.resource;
 
 import org.junit.Test;
 
-import static org.junit.Assert.*;
-
-public class ArtistResourceTest extends ArtistResource {
+public class ArtistResourceTest {
     @Test
     public void getArtistsTest() throws Exception {
     }

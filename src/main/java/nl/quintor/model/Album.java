@@ -1,9 +1,7 @@
 package nl.quintor.model;
 
-import javax.persistence.Basic;
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
-import javax.persistence.Id;
 import javax.persistence.ManyToOne;
 import javax.persistence.NamedQueries;
 import javax.persistence.NamedQuery;
@@ -16,7 +14,7 @@ import javax.xml.bind.annotation.XmlRootElement;
 import java.util.Date;
 
 
-@SuppressWarnings("unused")
+@SuppressWarnings("unused | WeakerAccess")
 @XmlRootElement
 @Entity
 @Table(name = "albums")
@@ -42,15 +40,11 @@ public class Album extends Model{
     public Album() {
     }
 
-
-    @SuppressWarnings("WeakerAccess")
     public Album(String name, Artist artist) {
         this.name = name;
         this.artist = artist;
     }
 
-
-    @SuppressWarnings("WeakerAccess")
     public Album(String name, Artist artist, Date appearance) {
         this(name, artist);
         this.appearance = appearance;

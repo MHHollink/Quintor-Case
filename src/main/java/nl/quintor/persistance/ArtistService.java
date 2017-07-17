@@ -7,14 +7,13 @@ import javax.persistence.EntityManagerFactory;
 import javax.persistence.EntityTransaction;
 import javax.persistence.Persistence;
 import javax.persistence.Query;
-import java.util.ArrayList;
 import java.util.List;
 
 public class ArtistService implements PersistenceService<Long, Artist> {
 
-    EntityManagerFactory factory;
-    EntityManager manager;
-    EntityTransaction transaction;
+    private EntityManagerFactory factory;
+    private EntityManager manager;
+    private EntityTransaction transaction;
 
     public ArtistService() {
         factory = Persistence.createEntityManagerFactory("libraryDatabase");
@@ -35,16 +34,17 @@ public class ArtistService implements PersistenceService<Long, Artist> {
 
     @Override
     public List<Artist> getAll() {
-        List<Artist> reponse = new ArrayList<>();
+        List<Artist> response;
 
         setup();
 
         Query query = manager.createQuery("SELECT a FROM Artist a");
-        reponse = query.getResultList();
+        //noinspection unchecked
+        response = query.getResultList();
 
         tearDown();
 
-        return reponse;
+        return response;
     }
 
     @Override
@@ -52,11 +52,11 @@ public class ArtistService implements PersistenceService<Long, Artist> {
 
         setup();
 
-        Artist reponse = manager.find(Artist.class, id);
+        Artist response = manager.find(Artist.class, id);
 
         tearDown();
 
-        return reponse;
+        return response;
     }
 
     @Override
@@ -68,11 +68,11 @@ public class ArtistService implements PersistenceService<Long, Artist> {
         else
             manager.merge(artist);
 
-        Artist reponse = manager.find(Artist.class, artist);
+        Artist response = manager.find(Artist.class, artist);
 
         tearDown();
 
-        return reponse;
+        return response;
     }
 
     @Override

@@ -11,7 +11,7 @@ import javax.validation.constraints.Size;
 import javax.xml.bind.annotation.XmlRootElement;
 import java.util.Date;
 
-@SuppressWarnings("unused")
+@SuppressWarnings("unused | WeakerAccess")
 @XmlRootElement
 @Entity
 @Table(name = "artists")
@@ -43,7 +43,6 @@ public class Artist extends Model{
         // Empty constructor
     }
 
-    @SuppressWarnings("WeakerAccess")
     public Artist(String firstName, String lastName, Date born, String nationality, int yearsActiveStart) {
         this.firstName = firstName;
         this.lastName = lastName;
@@ -52,7 +51,6 @@ public class Artist extends Model{
         this.yearsActiveStart = yearsActiveStart;
     }
 
-    @SuppressWarnings("WeakerAccess")
     public Artist(String firstName, String lastName, Date born, String nationality, int yearsActiveStart, int yearsActiveEnd) {
         this(firstName, lastName, born, nationality, yearsActiveStart);
         this.yearsActiveEnd = yearsActiveEnd;

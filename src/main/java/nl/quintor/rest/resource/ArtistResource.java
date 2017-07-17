@@ -3,7 +3,6 @@ package nl.quintor.rest.resource;
 import nl.quintor.model.Artist;
 import nl.quintor.persistance.ArtistService;
 
-import javax.inject.Inject;
 import javax.ws.rs.Consumes;
 import javax.ws.rs.DELETE;
 import javax.ws.rs.GET;
@@ -18,7 +17,7 @@ import java.util.List;
 @Path("artists")
 public class ArtistResource {
 
-    ArtistService service = new ArtistService();
+    private ArtistService service = new ArtistService();
 
     @GET
     @Produces({MediaType.APPLICATION_JSON, MediaType.APPLICATION_XML})

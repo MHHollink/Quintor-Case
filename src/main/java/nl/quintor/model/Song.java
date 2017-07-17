@@ -10,7 +10,7 @@ import javax.xml.bind.annotation.XmlRootElement;
 
 @XmlRootElement
 @Entity
-@SuppressWarnings("unused")
+@SuppressWarnings("unused | WeakerAccess")
 @Table(name = "songs")
 @NamedQueries({
         @NamedQuery( name = "Song.findAll", query = "SELECT s FROM Song s")

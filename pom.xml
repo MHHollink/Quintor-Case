@@ -38,59 +38,81 @@
     </dependencyManagement>
 
     <dependencies>
+        <!-- SERVLET -->
         <dependency>
             <groupId>org.glassfish.jersey.containers</groupId>
             <artifactId>jersey-container-servlet-core</artifactId>
             <!-- use the following artifactId if you don't need servlet 2.x compatibility -->
             <!-- artifactId>jersey-container-servlet</artifactId -->
         </dependency>
+
         <dependency>
             <groupId>org.glassfish.jersey.media</groupId>
             <artifactId>jersey-media-moxy</artifactId>
         </dependency>
 
         <dependency>
+            <groupId>dom4j</groupId>
+            <artifactId>dom4j</artifactId>
+            <version>${dom4j.version}</version>
+            <scope>provided</scope>
+        </dependency>
+        <!-- END SERVLET -->
+
+        <!-- DATA STORAGE-->
+        <dependency>
             <groupId>org.hibernate</groupId>
             <artifactId>hibernate-core</artifactId>
             <version>${hibernate.version}</version>
+            <scope>provided</scope>
         </dependency>
 
         <dependency>
             <groupId>org.hibernate</groupId>
             <artifactId>hibernate-entitymanager</artifactId>
-            <version>3.3.2.GA</version>
+            <version>${hibarnate.em.version}</version>
         </dependency>
 
-        <!-- https://mvnrepository.com/artifact/javax.transaction/jta -->
         <dependency>
             <groupId>javax.transaction</groupId>
             <artifactId>jta</artifactId>
-            <version>1.1</version>
+            <version>${javax.transactions.version}</version>
+            <scope>provided</scope>
         </dependency>
 
         <dependency>
             <groupId>org.postgresql</groupId>
             <artifactId>postgresql</artifactId>
             <version>${postgre.version}</version>
+            <scope>provided</scope>
         </dependency>
+        <!-- END DATA STORAGE-->
 
+        <!-- TESTING -->
         <dependency>
             <groupId>junit</groupId>
             <artifactId>junit</artifactId>
             <version>${junit.version}</version>
+            <scope>test</scope>
         </dependency>
 
         <dependency>
             <groupId>org.hamcrest</groupId>
             <artifactId>hamcrest-junit</artifactId>
             <version>${hamcrest.version}</version>
+            <scope>test</scope>
         </dependency>
+        <!-- END TESTING -->
+
     </dependencies>
+
     <properties>
-
         <jersey.version>2.25</jersey.version>
+        <dom4j.version>1.6.1</dom4j.version>
 
-        <hibernate.version>5.2.10.Final</hibernate.version>
+        <hibernate.version>5.0.10.Final</hibernate.version>
+        <hibarnate.em.version>3.3.2.GA</hibarnate.em.version>
+        <javax.transactions.version>1.1</javax.transactions.version>
         <postgre.version>42.1.1</postgre.version>
 
         <junit.version>4.12</junit.version>
