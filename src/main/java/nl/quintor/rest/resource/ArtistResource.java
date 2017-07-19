@@ -1,8 +1,10 @@
 package nl.quintor.rest.resource;
 
 import nl.quintor.model.Artist;
-import nl.quintor.persistance.ArtistService;
+import nl.quintor.persistence.ArtistServiceInterface;
 
+import javax.enterprise.context.RequestScoped;
+import javax.inject.Inject;
 import javax.ws.rs.Consumes;
 import javax.ws.rs.DELETE;
 import javax.ws.rs.GET;
@@ -15,9 +17,11 @@ import javax.ws.rs.core.MediaType;
 import java.util.List;
 
 @Path("artists")
+@RequestScoped
 public class ArtistResource {
 
-    private ArtistService service = new ArtistService();
+    @Inject
+    private ArtistServiceInterface service;
 
     @GET
     @Produces({MediaType.APPLICATION_JSON, MediaType.APPLICATION_XML})

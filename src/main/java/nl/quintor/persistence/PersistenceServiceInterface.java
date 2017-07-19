@@ -1,10 +1,10 @@
-package nl.quintor.persistance;
+package nl.quintor.persistence;
 
 import nl.quintor.model.Model;
 
 import java.util.List;
 
-public interface PersistenceService<ID, M extends Model> {
+public interface PersistenceServiceInterface<ID, M extends Model> {
 
     List<M> getAll();
     M getOne(ID id);

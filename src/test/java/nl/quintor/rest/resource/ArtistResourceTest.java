@@ -5,6 +5,7 @@ import org.junit.Test;
 public class ArtistResourceTest {
     @Test
     public void getArtistsTest() throws Exception {
+
     }
 
     @Test

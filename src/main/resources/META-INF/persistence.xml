@@ -9,6 +9,7 @@
 
         <provider>org.hibernate.ejb.HibernatePersistence</provider>
 
+        <class>nl.quintor.model.Model</class>
         <class>nl.quintor.model.Album</class>
         <class>nl.quintor.model.Artist</class>
         <class>nl.quintor.model.Song</class>
@@ -20,7 +21,6 @@
             <property name="hibernate.connection.driver_class" value="org.postgresql.Driver"/>
 
             <property name="hibernate.dialect" value="org.hibernate.dialect.PostgreSQL94Dialect"/>
-
         </properties>
 
     </persistence-unit>
