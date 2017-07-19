@@ -2,26 +2,27 @@ package nl.quintor.rest.resource;
 
 import org.junit.Test;
 
-public class ArtistResourceTest {
+public class ArtistResourceTest{
+
     @Test
-    public void getArtistsTest() throws Exception {
+    public void getArtists() throws Exception {
 
     }
 
     @Test
-    public void createArtistTest() throws Exception {
+    public void createArtist() throws Exception {
     }
 
     @Test
-    public void getArtistTest() throws Exception {
+    public void getArtist() throws Exception {
     }
 
     @Test
-    public void updateArtistTest() throws Exception {
+    public void updateArtist() throws Exception {
     }
 
     @Test
-    public void deleteArtistTest() throws Exception {
+    public void deleteArtist() throws Exception {
     }
 
 }
