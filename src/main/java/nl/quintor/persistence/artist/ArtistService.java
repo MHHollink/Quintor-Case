@@ -1,8 +1,9 @@
-package nl.quintor.persistence;
+package nl.quintor.persistence.artist;
 
 import nl.quintor.interceptor.Log;
 import nl.quintor.model.Artist;
 
+import javax.annotation.ManagedBean;
 import javax.enterprise.context.ApplicationScoped;
 import javax.enterprise.inject.Default;
 import javax.persistence.EntityManager;
@@ -12,6 +13,7 @@ import javax.persistence.Query;
 import java.util.List;
 
 @Default
+@ManagedBean
 @ApplicationScoped
 public class ArtistService implements ArtistServiceInterface{
 

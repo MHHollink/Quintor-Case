@@ -1,7 +1,7 @@
 package nl.quintor.rest.resource;
 
-import nl.quintor.model.Artist;
-import nl.quintor.persistence.artist.ArtistServiceInterface;
+import nl.quintor.model.Album;
+import nl.quintor.persistence.album.AlbumServiceInterface;
 
 import javax.enterprise.context.RequestScoped;
 import javax.inject.Inject;
@@ -16,34 +16,34 @@ import javax.ws.rs.Produces;
 import javax.ws.rs.core.MediaType;
 import java.util.List;
 
-@Path("artists")
+@Path("albums")
 @RequestScoped
-public class ArtistResource {
+public class AlbumResource {
 
-    private ArtistServiceInterface service;
+    private AlbumServiceInterface service;
 
     @Inject
-    public ArtistResource(ArtistServiceInterface service){
+    public AlbumResource(AlbumServiceInterface service){
         this.service = service;
     }
 
     @GET
     @Produces({MediaType.APPLICATION_JSON, MediaType.APPLICATION_XML})
-    public List<Artist> getArtists() {
+    public List<Album> getAlbums() {
         return service.getAll();
     }
 
     @POST
     @Consumes({MediaType.APPLICATION_JSON, MediaType.APPLICATION_XML})
     @Produces({MediaType.APPLICATION_JSON, MediaType.APPLICATION_XML})
-    public Artist createArtist(Artist artist) {
-        return service.save(artist);
+    public Album createAlbum(Album album) {
+        return service.save(album);
     }
 
     @GET
     @Path("{id}")
     @Produces({MediaType.APPLICATION_JSON, MediaType.APPLICATION_XML})
-    public Artist getArtist(@PathParam("id") long id) {
+    public Album getAlbum(@PathParam("id") long id) {
         return service.getOne(id);
     }
 
@@ -52,15 +52,15 @@ public class ArtistResource {
     @Path("{id}")
     @Consumes({MediaType.APPLICATION_JSON, MediaType.APPLICATION_XML})
     @Produces({MediaType.APPLICATION_JSON, MediaType.APPLICATION_XML})
-    public Artist updateArtist(Artist artist, @PathParam("id") long id) {
+    public Album updateAlbum(Album album, @PathParam("id") long id) {
         // TODO, checks on ID
-        return service.save(artist);
+        return service.save(album);
     }
 
     @DELETE
     @Path("{id}")
     @Produces({MediaType.APPLICATION_JSON, MediaType.APPLICATION_XML})
-    public Artist deleteArtist(@PathParam("id") long id) {
+    public Album deleteArtist(@PathParam("id") long id) {
         service.delete(id);
         return service.getOne(id); // should return null...
     }
